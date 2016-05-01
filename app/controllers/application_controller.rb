@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  ENV["tr_auth_key"] = "Y29kZXRlc3RAdGFwcmVzZWFyY2guY29tOjc2YjJlZjAyNjhhOTE3NzkyN2E5NWJkNGRiNGI4ZGJj"
+  
   def query_tap_research(path)
     base_url = "http://staging.tapresearch.com/api/v1"
     headers = {"Authorization" => "Basic #{ENV["tr_auth_key"]}"}
