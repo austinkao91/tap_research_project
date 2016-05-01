@@ -1,0 +1,37 @@
+<h1>Campaigns</h1>
+<ol>
+  <% @campaigns.each do |campaign| %>
+    <li>
+      <ul>
+        <li>
+          Name: <%= campaign.name %>
+        </li>
+        <li>
+          ID: <%= campaign.id %>
+        </li>
+        <li>
+          Interview Length: <%= campaign.length_of_interview %>
+        </li>
+        <ul>
+          <% campaign.campaign_quotas.each do |quota| %>
+            <li>
+              Quota ID: <%= quota.id %>
+            </li>
+            <ul>
+              <% quota.campaign_qualifications.each do |qual| %>
+                <li>
+                  Question ID: <%= qual.question_id %>
+                </li>
+                <li>
+                  Pre_codes: <%= qual.pre_codes %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </ul>
+        </li>
+      </ul>
+
+    </li>
+  <% end %>
+</ol>

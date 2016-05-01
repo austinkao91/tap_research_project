@@ -1,0 +1,13 @@
+<h1>Campaign</h1>
+<p><%= @campaign.id %></p>
+<ul>
+  <% @campaign.campaign_quotas.each do |quota| %>
+    <li>
+      Campaign Qualifications
+      <%quota.campaign_qualifications.each do |qual| %>
+        Question ID:<%= qual.question_id %>
+        PreCodes: <%= qual.pre_codes %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
